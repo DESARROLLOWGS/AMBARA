@@ -316,22 +316,30 @@ a {
 }
 
 .collection-card {
-  height: 220px;
+  height: 380px; /* ⬅️ Aumentamos la altura de 220px a 380px para que sea más alta y elegante */
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  padding: 25px;
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  padding: 30px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
   background-size: cover;
   background-position: center;
+  transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-/* Rutas de las imágenes de las tarjetas desde css/ */
-.card-1 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria1.webp'); }
-.card-2 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria2.png'); }
-.card-3 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria3.png'); }
-.card-4 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria4.png'); }
+/* 🔄 Efecto Hover premium para darle dinamismo */
+.collection-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--oro-brillante);
+  cursor: pointer;
+}
+
+/* ⬇️ Reducimos la opacidad del degradado negro (de 0.9 a 0.6) para que la imagen NO se vea oscura */
+.card-1 { background-image: linear-gradient(to top, rgba(7,7,7,0.8) 10%, rgba(7,7,7,0.1) 60%), url('../assets/categoria1.webp'); }
+.card-2 { background-image: linear-gradient(to top, rgba(7,7,7,0.8) 10%, rgba(7,7,7,0.1) 60%), url('../assets/categoria2.png'); }
+.card-3 { background-image: linear-gradient(to top, rgba(7,7,7,0.8) 10%, rgba(7,7,7,0.1) 60%), url('../assets/categoria3.png'); }
+.card-4 { background-image: linear-gradient(to top, rgba(7,7,7,0.8) 10%, rgba(7,7,7,0.1) 60%), url('../assets/categoria4.png'); }
 
 .card-content {
   text-align: left;
