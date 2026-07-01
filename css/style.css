@@ -163,10 +163,17 @@ a {
   align-items: center;
   padding: 0 5%;
   position: relative;
-  /* Ruta configurada partiendo desde la carpeta css/ hacia atrás */
-  background: linear-gradient(to right, rgba(7,7,7,0.9) 40%, rgba(7,7,7,0.2) 70%), 
-              url('../assets/hero.png') no-repeat right center;
-  background-size: cover;
+  
+  /* 1. Cambiamos el degradado para que no sature y usamos la ruta correcta */
+  background: linear-gradient(to right, rgba(7, 7, 7, 0.85) 35%, rgba(7, 7, 7, 0) 65%), 
+              url('../assets/hero.png') no-repeat;
+  
+  /* 2. Ajustamos el tamaño al 100% de la altura para que NUNCA se corten los perfumes por arriba ni por abajo */
+  background-size: contain; 
+  
+  /* 3. Forzamos a que la imagen se pegue por completo a la derecha */
+  background-position: right center; 
+  
   background-color: var(--negro-profundo);
 }
 
