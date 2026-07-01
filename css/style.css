@@ -1,1 +1,343 @@
+/* ==========================================================================
+   VARIABLES Y ESTILOS GLOBALES
+   ========================================================================== */
+:root {
+  --oro-brillante: #d4af37;
+  --oro-oscuro: #aa841b;
+  --oro-tenue: #c5a059;
+  --negro-profundo: #070707;
+  --negro-secundario: #121212;
+  --blanco-marfil: #f9f6f0;
+  --gris-texto: #b5b5b5;
+  --fuente-titulo: 'Cormorant Garamond', serif;
+  --fuente-base: 'Montserrat', sans-serif;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--negro-profundo);
+  color: var(--blanco-marfil);
+  font-family: var(--fuente-base);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   1. TOP BAR (Barra superior)
+   ========================================================================== */
+.top-bar {
+  background-color: var(--oro-oscuro);
+  color: var(--negro-profundo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  gap: 25px;
+}
+
+.top-bar i {
+  margin-right: 5px;
+}
+
+/* ==========================================================================
+   2. HEADER / NAV (Navegación principal)
+   ========================================================================== */
+.main-header {
+  background-color: rgba(7, 7, 7, 0.95);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--oro-brillante);
+}
+
+.logo-text h1 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--oro-tenue);
+}
+
+.logo-text span {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--gris-texto);
+  display: block;
+  margin-top: 2px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.main-nav a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.main-nav a:hover, .main-nav .active {
+  color: var(--oro-brillante);
+  border-bottom: 1px solid var(--oro-brillante);
+  padding-bottom: 4px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+.header-actions a:hover {
+  color: var(--oro-brillante);
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--oro-brillante);
+  color: var(--negro-profundo);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  /* Ruta configurada partiendo desde la carpeta css/ hacia atrás */
+  background: linear-gradient(to right, rgba(7,7,7,0.9) 40%, rgba(7,7,7,0.2) 70%), 
+              url('../assets/hero.png') no-repeat right center;
+  background-size: cover;
+  background-color: var(--negro-profundo);
+}
+
+.hero-content {
+  max-width: 600px;
+  z-index: 5;
+}
+
+.hero-content h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--blanco-marfil);
+  line-height: 1.1;
+}
+
+.hero-content h2 span {
+  display: block;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--oro-tenue);
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: var(--gris-texto);
+  margin: 25px 0 35px 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--oro-oscuro);
+  color: var(--blanco-marfil);
+  padding: 15px 35px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+.hero-btn:hover {
+  background-color: transparent;
+  border-color: var(--oro-brillante);
+  color: var(--oro-brillante);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 25px;
+  height: 4px;
+  background-color: rgba(255,255,255,0.3);
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--oro-brillante);
+}
+
+/* ==========================================================================
+   4. FEATURES BAR
+   ========================================================================== */
+.features-bar {
+  background-color: var(--negro-secundario);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px 5%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-item i {
+  font-size: 2rem;
+  color: var(--oro-tenue);
+}
+
+.feature-text h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.feature-text p {
+  font-size: 0.75rem;
+  color: var(--gris-texto);
+}
+
+/* ==========================================================================
+   5. COLLECTIONS SECTION
+   ========================================================================== */
+.collections {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  color: var(--oro-tenue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.collections h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.grid-collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.collection-card {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Rutas de las imágenes de las tarjetas desde css/ */
+.card-1 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria1.png'); }
+.card-2 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria2.png'); }
+.card-3 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria3.png'); }
+.card-4 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria4.png'); }
+
+.card-content {
+  text-align: left;
+}
+
+.card-content h5 {
+  color: var(--oro-tenue);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  font-size: 0.75rem;
+  color: var(--gris-texto);
+  font-weight: 300;
+}
+
+/* Responsive para dispositivos móviles */
+@media(max-width: 768px) {
+  .top-bar, .main-nav, .header-actions a:not(.cart-icon) { display: none; }
+  .hero-content h2 span { font-size: 3rem; }
+  .collections h3 { font-size: 2rem; }
+}
