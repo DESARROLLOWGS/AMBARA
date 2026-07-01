@@ -328,7 +328,7 @@ a {
 }
 
 /* Rutas de las imágenes de las tarjetas desde css/ */
-.card-1 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria1.png'); }
+.card-1 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria1.webp'); }
 .card-2 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria2.png'); }
 .card-3 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria3.png'); }
 .card-4 { background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('../assets/categoria4.png'); }
