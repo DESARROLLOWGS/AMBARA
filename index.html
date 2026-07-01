@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!--========================================================HEAD========================
+    ===============================-->
 <head>
 
-    <!-- ========================================
-                CONFIGURACIÓN GENERAL
-    ========================================= -->
-
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>AMBARA | El Arte del Perfume Oriental</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AMBARA | Perfumes Árabes Originales</title>
-
     <meta name="description"
-        content="Descubre perfumes árabes originales de las mejores marcas como Lattafa, Afnan, Armaf, Maison Alhambra y más. Envíos a todo el Perú.">
+        content="Perfumes árabes originales. Lattafa, Afnan, Armaf, Maison Alhambra, Rasasi, Paris Corner y muchas marcas exclusivas.">
 
     <meta name="keywords"
-        content="perfumes árabes, lattafa, afnan, armaf, perfumes originales, perfumes importados">
+        content="perfumes árabes, lattafa, afnan, armaf, perfumes originales, perfumes orientales">
 
     <meta name="author" content="AMBARA">
-
-    <!-- Favicon -->
-
-    <link rel="icon" href="assets/logo/favicon.png">
 
     <!-- Google Fonts -->
 
@@ -30,12 +26,23 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- Fontawesome -->
+    <!-- FontAwesome -->
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Swiper -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- AOS -->
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
     <!-- CSS -->
 
@@ -45,723 +52,160 @@
 
     <link rel="stylesheet" href="css/animations.css">
 
+    <link rel="icon" href="assets/favicon/favicon.png">
+
 </head>
 
 <body>
 
-<!--=========================================
-                LOADER
-==========================================-->
+    <!-- Top Bar -->
+    <section class="topbar">
 
-<div id="loader">
+    <div class="topbar-container">
 
-    <div class="loader-logo">
+        <div class="topbar-item">
 
-        <img src="assets/logo/logo.png" alt="AMBARA">
+            <i class="fa-solid fa-truck-fast"></i>
 
-        <h1>AMBARA</h1>
+            <span>Envíos a todo el Perú</span>
 
-        <span>Luxury Arabian Perfumes</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="topbar-item">
+
+            <i class="fa-solid fa-gem"></i>
+
+            <span>Perfumes 100% Originales</span>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="topbar-item">
+
+            <i class="fa-solid fa-star"></i>
+
+            <span>Atención Personalizada</span>
+
+        </div>
 
     </div>
 
-</div>
+</section>
 
-<!--=========================================
-            TOP BAR
-==========================================-->
 
-<div class="top-bar">
+
+    <!-- Navbar -->
+
+    <header class="header">
 
     <div class="container">
 
-        <div class="top-left">
+        <a href="#" class="logo">
 
-            <span>
-
-                <i class="fa-solid fa-truck-fast"></i>
-
-                Envíos a todo el Perú
-
-            </span>
-
-        </div>
-
-        <div class="top-center">
-
-            <span>
-
-                <i class="fa-solid fa-shield-halved"></i>
-
-                Perfumes 100% Originales
-
-            </span>
-
-        </div>
-
-        <div class="top-right">
-
-            <span>
-
-                <i class="fa-solid fa-phone"></i>
-
-                Atención personalizada
-
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!--=========================================
-                HEADER
-==========================================-->
-
-<header>
-
-<nav class="navbar">
-
-<div class="container">
-
-<!-- Logo -->
-
-<a href="index.html" class="logo">
-
-<img src="assets/logo/logo.png" alt="AMBARA">
-
-<h2>AMBARA</h2>
-
-</a>
-
-<!-- Menú -->
-
-<ul class="nav-links">
-
-<li><a href="#">Inicio</a></li>
-
-<li><a href="#">Perfumes</a></li>
-
-<li><a href="#">Colecciones</a></li>
-
-<li><a href="#">Marcas</a></li>
-
-<li><a href="#">Nosotros</a></li>
-
-<li><a href="#">Contacto</a></li>
-
-</ul>
-
-<!-- Iconos -->
-
-<div class="nav-icons">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-<i class="fa-regular fa-heart"></i>
-
-<i class="fa-regular fa-user"></i>
-
-<i class="fa-solid fa-bag-shopping"></i>
-
-<div class="menu-mobile">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-</div>
-
-</div>
-
-</nav>
-
-</header>
-
-<!--=========================================
-                HERO
-==========================================-->
-
-<section class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="container hero-container">
-
-<div class="hero-content">
-
-<span class="hero-subtitle">
-
-Perfumería Árabe Premium
-
-</span>
-
-<h1>
-
-Descubre el arte de la perfumería oriental
-
-</h1>
-
-<p>
-
-Fragancias intensas, elegantes y exclusivas provenientes de Medio Oriente. Encuentra aromas que permanecen contigo durante todo el día.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#" class="btn-primary">
-
-Comprar ahora
-
-</a>
-
-<a href="#" class="btn-secondary">
-
-Explorar colección
-
-</a>
-
-</div>
-
-<div class="hero-features">
-
-<div>
-
-<i class="fa-solid fa-check"></i>
-
-Originales
-
-</div>
-
-<div>
-
-<i class="fa-solid fa-check"></i>
-
-Larga duración
-
-</div>
-
-<div>
-
-<i class="fa-solid fa-check"></i>
-
-Importados
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="assets/hero/hero-perfume.png" alt="Perfume Árabe">
-
-</div>
-
-</div>
-
-</section>
-
-<!--=========================================
-            FEATURES
-==========================================-->
-
-<section class="features">
-
-<div class="container">
-
-<div class="feature-card">
-
-<i class="fa-solid fa-box"></i>
-
-<h3>Envío Seguro</h3>
-
-<p>
-
-Empaques protegidos y envío rápido a cualquier ciudad del Perú.
-
-</p>
-
-</div>
-
-<div class="feature-card">
-
-<i class="fa-solid fa-gem"></i>
-
-<h3>Calidad Premium</h3>
-
-<p>
-
-Solo trabajamos con distribuidores oficiales.
-
-</p>
-
-</div>
-
-<div class="feature-card">
-
-<i class="fa-solid fa-award"></i>
-
-<h3>Marcas Exclusivas</h3>
-
-<p>
-
-Lattafa, Armaf, Afnan, Maison Alhambra y muchas más.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!--=========================================
-        NUESTRA ESENCIA
-==========================================-->
-
-<section class="about">
-
-<div class="container about-container">
-
-<div class="about-image">
-
-<img src="assets/backgrounds/about.jpg" alt="Perfumería Árabe">
-
-</div>
-
-<div class="about-content">
-
-<span>
-
-Nuestra esencia
-
-</span>
-
-<h2>
-
-Más que perfumes...
-Una experiencia sensorial.
-
-</h2>
-
-<p>
-
-En AMBARA creemos que cada fragancia cuenta una historia. Hemos seleccionado cuidadosamente perfumes árabes reconocidos mundialmente por su calidad, elegancia y extraordinaria duración.
-
-</p>
-
-<p>
-
-Nuestro objetivo es acercar al Perú las mejores casas perfumistas del Medio Oriente ofreciendo únicamente productos originales.
-
-</p>
-
-<a href="#" class="btn-primary">
-
-Conoce nuestra historia
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!--=========================================
-    CONTINÚA EN LA PARTE 2
-==========================================-->
-<!--=========================================
-            MARCAS PREMIUM
-==========================================-->
-
-<section class="brands">
-
-    <div class="section-title">
-
-        <span>Marcas Exclusivas</span>
-
-        <h2>Trabajamos con las mejores casas perfumistas</h2>
-
-    </div>
-
-    <div class="brands-slider">
-
-        <div class="brand-track">
-
-            <img src="assets/brands/lattafa.png" alt="Lattafa">
-
-            <img src="assets/brands/armaf.png" alt="Armaf">
-
-            <img src="assets/brands/afnan.png" alt="Afnan">
-
-            <img src="assets/brands/alhambra.png" alt="Maison Alhambra">
-
-            <img src="assets/brands/rasasi.png" alt="Rasasi">
-
-            <img src="assets/brands/alharamain.png" alt="Al Haramain">
-
-            <img src="assets/brands/pariscorner.png" alt="Paris Corner">
-
-            <!-- duplicados para efecto infinito -->
-
-            <img src="assets/brands/lattafa.png" alt="Lattafa">
-
-            <img src="assets/brands/armaf.png" alt="Armaf">
-
-            <img src="assets/brands/afnan.png" alt="Afnan">
-
-            <img src="assets/brands/alhambra.png" alt="Maison Alhambra">
-
-            <img src="assets/brands/rasasi.png" alt="Rasasi">
-
-            <img src="assets/brands/alharamain.png" alt="Al Haramain">
-
-            <img src="assets/brands/pariscorner.png" alt="Paris Corner">
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--=========================================
-        PRODUCTOS DESTACADOS
-==========================================-->
-
-<section class="featured-products">
-
-    <div class="section-title">
-
-        <span>Nuestros Favoritos</span>
-
-        <h2>Perfumes Más Vendidos</h2>
-
-        <p>
-            Descubre las fragancias que están conquistando el mundo.
-        </p>
-
-    </div>
-
-    <div class="container products-grid">
-
-        <!-- Producto 1 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">TOP</span>
-
-                <img src="assets/perfumes/khamrah.png" alt="Khamrah">
-
-                <div class="product-icons">
-
-                    <i class="fa-regular fa-heart"></i>
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    <i class="fa-solid fa-eye"></i>
-
-                </div>
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Lattafa Khamrah</h3>
-
-                <span>Eau de Parfum • 100ml</span>
-
-                <div class="stars">
-
-                    ★★★★★
-
-                </div>
-
-                <h4>S/. 199.00</h4>
-
-            </div>
-
-        </article>
-
-        <!-- Producto 2 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <img src="assets/perfumes/asad.png" alt="Asad">
-
-                <div class="product-icons">
-
-                    <i class="fa-regular fa-heart"></i>
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    <i class="fa-solid fa-eye"></i>
-
-                </div>
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Lattafa Asad</h3>
-
-                <span>Eau de Parfum • 100ml</span>
-
-                <div class="stars">
-
-                    ★★★★★
-
-                </div>
-
-                <h4>S/. 165.00</h4>
-
-            </div>
-
-        </article>
-
-        <!-- Producto 3 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <img src="assets/perfumes/yara.png" alt="Yara">
-
-                <div class="product-icons">
-
-                    <i class="fa-regular fa-heart"></i>
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    <i class="fa-solid fa-eye"></i>
-
-                </div>
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Lattafa Yara</h3>
-
-                <span>Eau de Parfum • 100ml</span>
-
-                <div class="stars">
-
-                    ★★★★★
-
-                </div>
-
-                <h4>S/. 175.00</h4>
-
-            </div>
-
-        </article>
-
-        <!-- Producto 4 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <img src="assets/perfumes/9pm.png" alt="9PM">
-
-                <div class="product-icons">
-
-                    <i class="fa-regular fa-heart"></i>
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    <i class="fa-solid fa-eye"></i>
-
-                </div>
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Afnan 9PM</h3>
-
-                <span>Eau de Parfum • 100ml</span>
-
-                <div class="stars">
-
-                    ★★★★★
-
-                </div>
-
-                <h4>S/. 210.00</h4>
-
-            </div>
-
-        </article>
-
-    </div>
-
-    <div class="center">
-
-        <a href="#" class="btn-primary">
-
-            Ver catálogo completo
+            <img src="assets/logo/logo.png" alt="AMBARA">
 
         </a>
 
-    </div>
+        <nav class="navbar">
 
-</section>
+            <ul>
 
-<!--=========================================
-            CATEGORÍAS
-==========================================-->
+                <li><a href="#">Inicio</a></li>
 
-<section class="categories">
+                <li><a href="#">Tienda</a></li>
 
-    <div class="section-title">
+                <li><a href="#">Marcas</a></li>
 
-        <span>Explora</span>
+                <li><a href="#">Nosotros</a></li>
 
-        <h2>Encuentra tu aroma ideal</h2>
+                <li><a href="#">Contacto</a></li>
 
-    </div>
+            </ul>
 
-    <div class="container categories-grid">
+        </nav>
 
-        <div class="category-card">
+        <div class="header-icons">
 
-            <img src="assets/categories/hombre.jpg" alt="Hombre">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="category-overlay">
+            <i class="fa-regular fa-heart"></i>
 
-                <h3>Para Hombre</h3>
-
-            </div>
-
-        </div>
-
-        <div class="category-card">
-
-            <img src="assets/categories/mujer.jpg" alt="Mujer">
-
-            <div class="category-overlay">
-
-                <h3>Para Mujer</h3>
-
-            </div>
-
-        </div>
-
-        <div class="category-card">
-
-            <img src="assets/categories/unisex.jpg" alt="Unisex">
-
-            <div class="category-overlay">
-
-                <h3>Unisex</h3>
-
-            </div>
-
-        </div>
-
-        <div class="category-card">
-
-            <img src="assets/categories/nicho.jpg" alt="Nicho">
-
-            <div class="category-overlay">
-
-                <h3>Colección Exclusiva</h3>
-
-            </div>
+            <i class="fa-solid fa-bag-shopping"></i>
 
         </div>
 
     </div>
 
-</section>
+</header>
+    
 
-<!--=========================================
-            PRODUCTO DEL MES
-==========================================-->
 
-<section class="product-month">
 
-    <div class="container month-container">
+    <!-- Hero -->
 
-        <div class="month-image">
 
-            <img src="assets/perfumes/featured.png" alt="Perfume del Mes">
 
-        </div>
+    <!-- Marcas -->
 
-        <div class="month-content">
 
-            <span>Selección Especial</span>
 
-            <h2>Perfume del Mes</h2>
+    <!-- Nuestra Esencia -->
 
-            <h3>Lattafa Khamrah</h3>
 
-            <p>
 
-                Una fragancia oriental con notas de canela, nuez moscada, vainilla, praliné y ámbar.
+    <!-- Categorías -->
 
-                Dulce, intensa y elegante.
 
-            </p>
 
-            <div class="notes">
+    <!-- Productos Destacados -->
 
-                <div>
 
-                    <strong>Salida</strong>
 
-                    <span>Canela</span>
+    <!-- Banner -->
 
-                </div>
 
-                <div>
 
-                    <strong>Corazón</strong>
+    <!-- Producto del Mes -->
 
-                    <span>Praliné</span>
 
-                </div>
 
-                <div>
+    <!-- Beneficios -->
 
-                    <strong>Fondo</strong>
 
-                    <span>Ámbar & Vainilla</span>
 
-                </div>
+    <!-- Estadísticas -->
 
-            </div>
 
-            <div class="month-price">
 
-                <h4>S/. 199.00</h4>
+    <!-- Testimonios -->
 
-            </div>
 
-            <a href="#" class="btn-primary">
 
-                Comprar ahora
+    <!-- Instagram -->
 
-            </a>
 
-        </div>
 
-    </div>
+    <!-- Newsletter -->
 
-</section>
 
-<!--=========================================
-        CONTINÚA EN LA PARTE 3
-==========================================-->
+
+    <!-- Footer -->
+
+
+
+    <!-- Botón WhatsApp -->
+
+
+
+    <!-- Botón subir -->
+
+
+
+    <!-- Scripts -->
+
+</body>
+
   
