@@ -195,6 +195,7 @@ a {
   background-size: contain; 
   background-position: right center; 
   background-color: var(--negro-profundo);
+  transition: background-image 0.8s ease-in-out; /* ⬅️ Añade esta línea para el efecto de desvanecido suave */
 }
 
 .hero-content {
