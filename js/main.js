@@ -1,12 +1,19 @@
 // Arreglo con las rutas de tus imágenes para el slider
 const sliderImages = [
     'assets/hero.png',
-    'assets/hero2.png', // Recuerda añadir estas imágenes a tu carpeta assets/
+    'assets/hero2.png',
     'assets/hero3.png'
 ];
 
+// 🚀 TRUCO DE OPTIMIZACIÓN: Precargar las imágenes en la memoria del navegador
+// Esto evita que la pantalla parpadee en negro cuando el slider cambia de foto por primera vez.
+sliderImages.forEach(ruta => {
+    const imgElement = new Image();
+    imgElement.src = ruta;
+});
+
 let currentIndex = 0;
-const slideInterval = 5000; // Tiempo en milisegundos (5 segundos)
+const slideInterval = 5000; // 5 segundos
 
 // Seleccionamos los elementos del DOM
 const heroSection = document.querySelector('.hero');
@@ -14,7 +21,6 @@ const dots = document.querySelectorAll('.dot');
 
 // Función principal para cambiar de slide
 function changeSlide(index) {
-    // Actualizamos el índice actual
     currentIndex = index;
 
     // Cambiamos la imagen de fondo en el CSS manteniendo el degradado envolvente
@@ -47,10 +53,9 @@ let autoSlide = setInterval(nextSlide, slideInterval);
 // Añadimos los eventos de clic a cada puntito
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        // Cambiamos al slide seleccionado
         changeSlide(index);
         
-        // Reiniciamos el temporizador para que no cambie abruptamente tras hacer clic
+        // Reiniciamos el temporizador para evitar saltos abruptos tras el clic
         clearInterval(autoSlide);
         autoSlide = setInterval(nextSlide, slideInterval);
     });
