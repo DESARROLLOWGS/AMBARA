@@ -557,3 +557,159 @@ a {
   border-color: var(--oro-brillante);
   font-weight: 600;
 }
+
+/* ==========================================================================
+   7. MAIN FOOTER (Estilos Pie de Página)
+   ========================================================================== */
+.main-footer {
+  background-color: var(--negro-secundario);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 70px 5% 20px 5%;
+  color: var(--gris-texto);
+  font-family: var(--fuente-base);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-column h4 {
+  font-family: var(--fuente-titulo);
+  color: var(--oro-tenue);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+
+/* Estilos específicos para la columna de marca */
+.footer-logo {
+  font-family: var(--fuente-titulo);
+  color: var(--oro-brillante);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Redes Sociales */
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--blanco-marfil);
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: var(--oro-brillante);
+  color: var(--negro-profundo);
+  border-color: var(--oro-brillante);
+  transform: translateY(-3px);
+}
+
+/* Listas de Enlaces de Navegación */
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul a {
+  font-size: 0.85rem;
+  font-weight: 300;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column ul a:hover {
+  color: var(--oro-brillante);
+  padding-left: 5px; /* Sutil efecto de desplazamiento al pasar el mouse */
+}
+
+/* Datos de Contacto */
+.contact-column p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-column p i {
+  color: var(--oro-tenue);
+  width: 15px;
+}
+
+/* Métodos de Pago */
+.payment-methods {
+  margin-top: 30px;
+}
+
+.payment-methods h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.8rem;
+  color: rgba(249, 246, 240, 0.8);
+}
+
+/* Barra Inferior de Derechos Reservados */
+.footer-bottom {
+  border-top: 1px solid rgba(215, 215, 215, 0.05);
+  margin-top: 50px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.developer-credit a {
+  color: var(--oro-tenue);
+  font-weight: 500;
+}
+
+.developer-credit a:hover {
+  color: var(--oro-brillante);
+  text-decoration: underline;
+}
+
+/* Ajuste responsive para celulares */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
