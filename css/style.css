@@ -491,6 +491,7 @@ a {
   color: var(--blanco-marfil);
   margin-bottom: 10px;
   line-height: 1.2;
+  min-height: 3.2rem; /* ⬅️ Esto reserva el espacio de hasta 2 líneas para que los botones siempre queden perfectamente alineados abajo */
 }
 
 /* Estrellas */
