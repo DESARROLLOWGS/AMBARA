@@ -60,3 +60,23 @@ dots.forEach((dot, index) => {
         autoSlide = setInterval(nextSlide, slideInterval);
     });
 });
+// ==========================================================================
+// CONTROL DEL MENÚ MOVIL RESPONSIVE
+// ==========================================================================
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.menu-close');
+const mainNav = document.querySelector('.main-nav');
+
+// Abrir el menú lateral al hacer clic en la hamburguesa
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.add('open');
+    });
+}
+
+// Cerrar el menú lateral al hacer clic en la 'X'
+if (menuClose && mainNav) {
+    menuClose.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+    });
+}
