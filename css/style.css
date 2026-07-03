@@ -721,8 +721,34 @@ a {
 
 @media (max-width: 768px) {
   .top-bar, .header-actions a:not(.cart-icon) { 
-    display: none; 
-  }
+    display: none;
+
+     /* =========================== modificar el slider a pequeño ============
+     =======================================================================*/
+     .hero {
+       height: 80vh; /* Ajustamos un poco la altura en móviles */
+    
+       /* Cambiamos el degradado a uno vertical para que el texto de arriba sea legible */
+       background: linear-gradient(to bottom, 
+                     rgba(7, 7, 7, 0.9) 0%, 
+                     rgba(7, 7, 7, 0.6) 40%, 
+                     rgba(7, 7, 7, 0.2) 70%, 
+                     rgba(7, 7, 7, 0.9) 100%), 
+                   url('../assets/hero.png') no-repeat;
+                
+       background-size: cover; /* ⬅️ Obliga a la imagen a rellenar el espacio sin encogerse como miniatura */
+       background-position: center center; /* ⬅️ Centra los perfumes en la pantalla del celular */
+    
+       align-items: flex-end; /* Empuja el texto un poco hacia abajo para que luzca la imagen */
+       padding-bottom: 60px;
+     }
+  
+     .hero-content {
+       text-align: center; /* Centramos el texto en móviles para que se vea más armónico */
+       width: 100%;
+     }
+   
+     }
 
   /* Mostrar botón hamburguesa */
   .menu-toggle {
