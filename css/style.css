@@ -704,8 +704,93 @@ a {
   text-decoration: underline;
 }
 
-/* Ajuste responsive para celulares */
+/* Ajuste responsive para celulares
 @media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}*/
+/* ==========================================================================
+   RESPONSIVE & MENÚ MÓVIL
+   ========================================================================== */
+.menu-toggle, .menu-close {
+  display: none; /* Ocultos por defecto en computadoras */
+}
+
+@media (max-width: 768px) {
+  .top-bar, .header-actions a:not(.cart-icon) { 
+    display: none; 
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--oro-brillante);
+    font-size: 1.5rem;
+    cursor: pointer;
+    order: 2; /* Lo posiciona correctamente */
+  }
+
+  .header-actions {
+    order: 3;
+  }
+
+  /* Transformar la navegación en un menú lateral móvil */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido por completo a la derecha */
+    width: 280px;
+    height: 100vh;
+    background-color: var(--negro-secundario);
+    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animación fluida */
+  }
+
+  /* Clase que añadiremos con JS para mostrar el menú */
+  .main-nav.open {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  /* Botón para cerrar dentro del menú móvil */
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: var(--blanco-marfil);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  
+  .menu-close:hover {
+    color: var(--oro-brillante);
+  }
+
+  /* Ajustes extras de empaquetado móvil */
+  .hero-content h2 span { font-size: 3rem; }
+  .collections h3 { font-size: 2rem; }
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
