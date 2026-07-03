@@ -20,16 +20,57 @@ const heroSection = document.querySelector('.hero');
 const dots = document.querySelectorAll('.dot');
 
 // Función principal para cambiar de slide
+//function changeSlide(index) {
+  //  currentIndex = index;
+
+    // Cambiamos la imagen de fondo en el CSS manteniendo el degradado envolvente
+    //heroSection.style.backgroundImage = `linear-gradient(to right, 
+      //          rgba(7, 7, 7, 1) 0%, 
+        //        rgba(7, 7, 7, 0.9) 30%, 
+          //      rgba(7, 7, 7, 0.4) 60%, 
+            //    rgba(7, 7, 7, 0) 100%), 
+            //  url('${sliderImages[currentIndex]}')`;
+
+    // Actualizamos la clase activa en los puntitos de navegación
+    //dots.forEach((dot, i) => {
+      //  if (i === currentIndex) {
+        //    dot.classList.add('active');
+       // } else {
+         //   dot.classList.remove('active');
+       // }
+   // });
+// }
+
+
+// Función para ir al siguiente slide automáticamente
+function nextSlide() {
+    let nextIndex = (currentIndex + 1) % sliderImages.length;
+    changeSlide(nextIndex);
+}
+// Función principal para cambiar de slide (Optimizada para móviles)
 function changeSlide(index) {
     currentIndex = index;
 
-    // Cambiamos la imagen de fondo en el CSS manteniendo el degradado envolvente
-    heroSection.style.backgroundImage = `linear-gradient(to right, 
-                rgba(7, 7, 7, 1) 0%, 
-                rgba(7, 7, 7, 0.9) 30%, 
-                rgba(7, 7, 7, 0.4) 60%, 
-                rgba(7, 7, 7, 0) 100%), 
-              url('${sliderImages[currentIndex]}')`;
+    // Detectamos si la pantalla es de celular (menor o igual a 768px)
+    const esMovil = window.innerWidth <= 768;
+
+    if (esMovil) {
+        // Degradado óptimo para celulares (Vertical: de arriba a abajo)
+        heroSection.style.backgroundImage = `linear-gradient(to bottom, 
+                    rgba(7, 7, 7, 0.9) 0%, 
+                    rgba(7, 7, 7, 0.6) 40%, 
+                    rgba(7, 7, 7, 0.2) 70%, 
+                    rgba(7, 7, 7, 0.9) 100%), 
+                  url('${sliderImages[currentIndex]}')`;
+    } else {
+        // Degradado óptimo para computadoras (Horizontal: de izquierda a derecha)
+        heroSection.style.backgroundImage = `linear-gradient(to right, 
+                    rgba(7, 7, 7, 1) 0%, 
+                    rgba(7, 7, 7, 0.9) 30%, 
+                    rgba(7, 7, 7, 0.4) 60%, 
+                    rgba(7, 7, 7, 0) 100%), 
+                  url('${sliderImages[currentIndex]}')`;
+    }
 
     // Actualizamos la clase activa en los puntitos de navegación
     dots.forEach((dot, i) => {
@@ -40,13 +81,6 @@ function changeSlide(index) {
         }
     });
 }
-
-// Función para ir al siguiente slide automáticamente
-function nextSlide() {
-    let nextIndex = (currentIndex + 1) % sliderImages.length;
-    changeSlide(nextIndex);
-}
-
 // Inicializamos el temporizador para el cambio automático
 let autoSlide = setInterval(nextSlide, slideInterval);
 
