@@ -824,3 +824,12 @@ a {
   }
 }
 
+/* Animación de pulso para el contador del carrito */
+.cart-count.pulse-animation {
+  transform: scale(1.3);
+  background-color: var(--oro-brillante);
+  color: var(--negro-profundo);
+  transition: transform 0.2s ease;
+}
+
+
