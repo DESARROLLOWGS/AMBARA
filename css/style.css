@@ -832,4 +832,152 @@ a {
   transition: transform 0.2s ease;
 }
 
+/* ==========================================================================
+   5.5 CATALOG SECTION (Estilos Catálogo y Filtros)
+   ========================================================================== */
+.catalog-section {
+  padding: 60px 5%;
+  background-color: var(--negro-profundo);
+}
 
+.catalog-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Sidebar de Filtros */
+.catalog-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 100px; /* Se queda fijo al hacer scroll */
+  height: fit-content;
+}
+
+.filter-group {
+  margin-bottom: 35px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  padding-bottom: 20px;
+}
+
+.filter-group h4 {
+  font-family: var(--fuente-titulo);
+  color: var(--oro-tenue);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Custom Checkboxes Premium */
+.filter-control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.filter-control:hover {
+  color: var(--blanco-marfil);
+}
+
+.filter-control input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.control-indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 2px;
+}
+
+.filter-control input:checked ~ .control-indicator {
+  background-color: var(--oro-brillante);
+  border-color: var(--oro-brillante);
+}
+
+.control-indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.filter-control input:checked ~ .control-indicator:after {
+  display: block;
+}
+
+.filter-control .control-indicator:after {
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--negro-profundo);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Contenido del catálogo */
+.catalog-content {
+  flex-grow: 1;
+}
+
+.catalog-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+}
+
+.results-count span {
+  color: var(--oro-brillante);
+  font-weight: 600;
+}
+
+.sort-select {
+  background-color: var(--negro-secundario);
+  color: var(--blanco-marfil);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 8px 15px;
+  font-family: var(--fuente-base);
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Responsive para el catálogo */
+@media (max-width: 992px) {
+  .catalog-container {
+    flex-direction: column;
+  }
+  
+  .catalog-sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .filter-group {
+    margin-bottom: 10px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
