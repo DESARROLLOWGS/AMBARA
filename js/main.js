@@ -114,3 +114,69 @@ if (menuClose && mainNav) {
         mainNav.classList.remove('open');
     });
 }
+
+// ==========================================================================
+// SISTEMA DEL CARRITO DE COMPRAS
+// ==========================================================================
+
+// Estado global del carrito (Carga los datos guardados en el navegador o inicia vacío)
+let cart = JSON.parse(localStorage.getItem('ambara_cart')) || [];
+
+// Seleccionamos los elementos del DOM necesarios
+const cartCountElement = document.querySelector('.cart-count');
+const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+// Función para actualizar el número flotante en el Header
+function updateCartCount() {
+    if (!cartCountElement) return;
+    
+    // Sumamos la cantidad total de productos en el carrito
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCountElement.textContent = totalItems;
+    
+    // Efecto visual de "pulso" en el icono para avisar que se añadió algo
+    cartCountElement.classList.add('pulse-animation');
+    setTimeout(() => {
+        cartCountElement.classList.remove('pulse-animation');
+    }, 300);
+}
+
+// Función para añadir un producto al array
+function addToCart(event) {
+    const button = event.currentTarget;
+    // Buscamos la tarjeta de producto más cercana para extraer su información en vivo
+    const productCard = button.closest('.product-card');
+    
+    const productInfo = {
+        id: productCard.querySelector('.product-title').textContent.trim().toLowerCase().replace(/\s+/g, '-'),
+        title: productCard.querySelector('.product-title').textContent.trim(),
+        price: parseFloat(productCard.querySelector('.price').textContent.replace('S/', '').trim()),
+        image: productCard.querySelector('.product-img').getAttribute('src'),
+        quantity: 1
+    };
+
+    // Verificamos si el producto ya existía en el carrito
+    const existingProductIndex = cart.findIndex(item => item.id === productInfo.id);
+
+    if (existingProductIndex > -1) {
+        // Si ya existe, solo sumamos uno a la cantidad
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        // Si es nuevo, lo empujamos al arreglo
+        cart.push(productInfo);
+    }
+
+    // Guardamos la lista actualizada en la memoria del navegador
+    localStorage.setItem('ambara_cart', JSON.stringify(cart));
+    
+    // Actualizamos el contador del Header
+    updateCartCount();
+}
+
+// Inicializamos los eventos de escucha en todos los botones de "Añadir al carrito"
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCart);
+});
+
+// Ejecutar al cargar la página por primera vez para renderizar si ya había productos guardados
+document.addEventListener('DOMContentLoaded', updateCartCount);
